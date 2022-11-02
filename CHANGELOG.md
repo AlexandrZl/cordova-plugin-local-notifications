@@ -1,5 +1,29 @@
 ChangeLog
 ---------
+### Vrsion 0.1.4 (2.11.2022)
+
+- FIX Bug 🐛 :bug
+  - Make notifications clickable on API 31+ by replacing the broadcast receiver by an activity used to start the main cordova activity.
+
+#### Important notice
+
+If the app is in background, it must not be launched but put in foreground.
+To avoid launching the app in this case, add the following in your config.xml file:
+`<preference name="AndroidLaunchMode" value="singleInstance"/>`
+## Special Thanks
+https://github.com/powowbox/cordova-plugin-local-notification-12
+
+#### Version 0.1.3
+- FIX Bug 🐛 :bug
+  - Added missing 'PendingIntent.FLAG_MUTABLE' and fixed gradle
+  - Guard against webview crash
+  - Add thread identifier property
+  - Delete Alarms when intent is deleted
+  - Not calling delegate events if nil or if we're consuming the notifiction
+  - Android 13 `POST_NOTIFICATIONS ` prmission and runtime popup added
+  - Enhancements (Android)
+  - New interfaces to ask for / register permissions required to schedule local notifications
+  - New method addded for android `setDummyNotification()`
 
 #### Version 0.9.0-beta.4
 - Platform enhancements
@@ -142,3 +166,8 @@ Please also read the [Upgrade Guide](https://github.com/katzer/cordova-plugin-lo
  - Scheduling local notifications with the deprecated properties is still possible
 - [Kitchen Sink sample app](https://github.com/katzer/cordova-plugin-local-notifications/tree/example)
 - [Wiki](https://github.com/katzer/cordova-plugin-local-notifications/wiki)
+
+
+### Version 0.8.0 (05.03.2015)
+
+Added condition to get view from view or engine [PR](https://github.com/bhandaribhumin/cordova-plugin-local-notification-12/pull/1)
